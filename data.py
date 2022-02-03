@@ -32,10 +32,20 @@ class Data:
             self.mylogger.error('Failed to read CSV file')
             print('Failed to read CSV file')
 
+    def readFileWOSchema(self, filename):
+        try:
+            self.mylogger.info("Reading file")
+            dataf = self.spark.read.csv(filename, header='true')
+
+            return dataf
+        except:
+            self.mylogger.error('Failed to read CSV file')
+            print('Failed to read CSV file')
+
     def saveFile(self, dataframe, filename):
         try:
             self.mylogger.info(f'Writing dataframe: {dataframe} to file {filename}')
-            dataframe.write.coalesce(1).mode('overwrite').option('header', 'true').csv(filename)
+            dataframe.coalesce(1).write.mode('overwrite').option('header', 'true').csv(filename)
 
         except:
             self.mylogger.error('Failed to write file')
