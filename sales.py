@@ -1,9 +1,21 @@
 from data import *
 
 class Sales(Data):
+    def __init__(self):
+        super(Sales, self).__init__()
+
+    def totalRevenuePerRegion(self, df):
+        newdf = df.groupBy('Region').agg(sum('Total Revenue').alias("Total Revenues"))
+        return newdf
+
+    def top5Countries(self, df, item):
+        newdf = df.filter(df["Item Type"] == item)
+        newdf = newdf.orderBy(df['Units Sold']).limit(5)
+        return newdf
 
 
-dobj = Data()
+
+sobj = Sales()
 
 dschema = StructType().add("Region", StringType(), True) \
     .add('Country', StringType(), True) \
@@ -17,7 +29,7 @@ dschema = StructType().add("Region", StringType(), True) \
     .add('Total Revenue', DoubleType(), True) \
     .add('Total Profit', DoubleType(), True)
 
-df = dobj.readFile('salesData.csv', dschema)
+df = sobj.readFile('salesData.csv', dschema)
 
 df.show()
 
@@ -25,4 +37,12 @@ def to_date_(col, formats=("dd-MM-yyyy", "MM/dd/yyyy")):
     # Spark 2.2 or later syntax, for < 2.2 use unix_timestamp and cast
     return coalesce(*[to_date(col, f) for f in formats])
 
-df.withColumn('Order Date', to_date_('Order Date')).show()
+df = df.withColumn('Order Date', to_date_('Order Date'))
+
+rev = sobj.totalRevenuePerRegion(df)
+
+rev.show()
+
+top5 = sobj.top5Countries(df, "Household")
+
+top5.show()

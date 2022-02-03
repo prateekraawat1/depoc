@@ -3,7 +3,6 @@ import logging
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
-
 class Data:
     def __init__(self):
         self.df = None
