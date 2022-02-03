@@ -12,6 +12,9 @@ class Sales(Data):
         newdf = df.filter(df["Item Type"] == item)
         newdf = newdf.orderBy(df['Units Sold']).limit(5)
         return newdf
+    def totalProfit(self, df):
+        newdf = df.filter(df['Region'] == "Asia").filter(df['Order Date'].between('2011-01-01', '2015-12-31')).orderBy(df['Order Date'])
+        return newdf
 
 
 
@@ -46,3 +49,7 @@ rev.show()
 top5 = sobj.top5Countries(df, "Household")
 
 top5.show()
+
+tp = sobj.totalProfit(df)
+
+tp.show()
