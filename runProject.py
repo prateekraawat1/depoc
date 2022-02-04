@@ -59,7 +59,7 @@ cobj.saveFile(dfi, "ij.csv")
 taccounts = cobj.totalAccountsAssociated(dfi)
 taccounts.show(20)
 
-dup = cobj.duplicateAcconts(dfi)
+dup = cobj.duplicateAccounts(dfi)
 dup.show()
 
 topBalance = cobj.topHighestBalance(dfi)

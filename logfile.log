@@ -1,11 +1,11 @@
-INFO 2022-02-04 14:09:55,830 - Reading file
-INFO 2022-02-04 14:09:58,307 - Calculate total revenue by Regions
-INFO 2022-02-04 14:10:01,026 - calculate Top 5 Countries by Item Type and Units Sold
-INFO 2022-02-04 14:10:01,921 - Calculating total profit by region
-INFO 2022-02-04 14:10:02,405 - Reading file
-INFO 2022-02-04 14:10:02,772 - Reading file
-INFO 2022-02-04 14:10:02,992 - Joining dataframes using inner
-INFO 2022-02-04 14:10:03,434 - Writing dataframe: DataFrame[customerId: string, accountId: string, balance: string, forename: string, surname: string] to file ij.csv
-INFO 2022-02-04 14:10:04,556 - Finding total accounts associated with a customer
-INFO 2022-02-04 14:10:05,788 - Finding total accounts associated with a customer
-INFO 2022-02-04 14:10:07,109 - Finding top 5 customers with highest balance
+INFO 2022-02-04 18:53:57,285 - Reading file
+INFO 2022-02-04 18:54:00,024 - Calculate total revenue by Regions
+INFO 2022-02-04 18:54:03,104 - calculate Top 5 Countries by Item Type and Units Sold
+INFO 2022-02-04 18:54:03,812 - Calculating total profit by region
+INFO 2022-02-04 18:54:04,212 - Reading file
+INFO 2022-02-04 18:54:04,575 - Reading file
+INFO 2022-02-04 18:54:04,742 - Joining dataframes using inner
+INFO 2022-02-04 18:54:05,215 - Writing dataframe: DataFrame[customerId: string, accountId: string, balance: string, forename: string, surname: string] to file ij.csv
+INFO 2022-02-04 18:54:06,422 - Finding total accounts associated with a customer
+INFO 2022-02-04 18:54:07,756 - Finding total accounts associated with a customer
+INFO 2022-02-04 18:54:09,219 - Finding top 5 customers with highest balance

@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 import logging
-
+from pyspark.sql.types import *
+from pyspark.sql.functions import *
 
 class Data:
     def __init__(self):
