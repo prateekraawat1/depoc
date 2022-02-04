@@ -51,4 +51,7 @@ class Data:
             self.mylogger.error('Failed to write file')
             print('Failed to save file')
 
+    def createDataframe(self, data, schema):
+        return self.spark.createDataFrame(data=data, schema=schema)
+
 
