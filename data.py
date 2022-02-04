@@ -1,7 +1,6 @@
 from pyspark.sql import SparkSession
 import logging
-from pyspark.sql.functions import *
-from pyspark.sql.types import *
+
 
 class Data:
     def __init__(self):
@@ -53,5 +52,3 @@ class Data:
 
     def createDataframe(self, data, schema):
         return self.spark.createDataFrame(data=data, schema=schema)
-
-
