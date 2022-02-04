@@ -27,7 +27,7 @@ class Customer(Data):
         newdf = df.groupBy(df['customerId'], df['forename'], df['surname']).count()
         return newdf
 
-    def duplicateAcconts(self, df):
+    def duplicateAccounts(self, df):
         """
         Method to find duplicates accounts associated with customerId
         :param df:
