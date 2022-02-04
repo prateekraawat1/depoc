@@ -33,21 +33,11 @@ class Customer(Data):
         newdf = newdf.filter(newdf['NoOfAccounts'] > 1)
         return newdf
 
-
-cobj = Customer()
-
-df1 = cobj.readFileWOSchema('account_data.csv')
-df2 = cobj.readFileWOSchema('customer_data.csv')
-# df = cobj.joinDF(df1, df2, 'outer')
-dfi = cobj.joinDF(df1, df2, 'inner')
-# df.orderBy(df['customerId']).show(50)
-dfi.show()
-
-cobj.saveFile(dfi, "ij.csv")
-# cobj.saveFile(df, "oj.csv")
-
-taccounts = cobj.totalAccountsAssociated(dfi)
-taccounts.show(20)
-
-dup = cobj.duplicateAcconts(dfi)
-dup.show()
+    def topHighestBalance(self, df):
+        """
+        Method to find top 5 customers with highest balance
+        :param df:
+        :return:
+        """
+        self.mylogger.info("Finding top 5 customers with highest balance")
+        return df.orderBy(df['balance'].desc()).limit(5)
