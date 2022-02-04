@@ -28,6 +28,11 @@ class Customer(Data):
         return newdf
 
     def duplicateAcconts(self, df):
+        """
+        Method to find duplicates accounts associated with customerId
+        :param df:
+        :return:
+        """
         formatteddf = self.totalAccountsAssociated(df)
         newdf = formatteddf.withColumnRenamed('count', "NoOfAccounts")
         newdf = newdf.filter(newdf['NoOfAccounts'] > 1)
